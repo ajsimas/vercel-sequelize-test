@@ -6,7 +6,6 @@ export default function Home() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(name);
     const response = await fetch('/api/name', {
       method: 'POST',
       headers: {
@@ -20,7 +19,7 @@ export default function Home() {
     }
 
     const data = await response.json();
-    console.log(data);
+    console.log('debug1', data);
   }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
