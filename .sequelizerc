@@ -1,0 +1,9 @@
+const {resolve} = require('path');
+
+const baseDbPath = resolve('src/db');
+
+module.exports = {
+  config: resolve(baseDbPath, 'config', 'sequelize-cli.js'),
+  modelsPath: resolve(baseDbPath, 'models'),
+  migrationsPath: resolve(baseDbPath, 'migrations'),
+};
