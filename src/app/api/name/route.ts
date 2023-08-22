@@ -1,4 +1,4 @@
-import {NextResponse} from 'next/server';
+import {NextRequest, NextResponse} from 'next/server';
 // import {UserModel} from '@/db/models';
 // import {v4 as uuidv4} from 'uuid';
 
@@ -9,7 +9,9 @@ import {NextResponse} from 'next/server';
 //   return NextResponse.json({greeting: `Hello ${userModel.dataValues.uuid}!`});
 // }
 
-export async function POST(req: Request) {
+export const runtime = 'edge';
+
+export async function POST(req: NextRequest) {
   const {name} = await req.json();
   return NextResponse.json({greeting: `Hello ${name}!`});
 }
